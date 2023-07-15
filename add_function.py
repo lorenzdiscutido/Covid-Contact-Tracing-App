@@ -4,38 +4,33 @@ class add_info(tk.Frame):
     def __init__(self, master=None):
         tk.Frame.__init__(self, master)
         # Create a label
-        name = tk.Label(self, text = "Full Name:")
-        name.place(x=50, y=50)
+        self.name = tk.Label(self, text = "Full Name:")
+        self.name.place(x=50, y=50)
 
-        phone_number = tk.Label(self, text = "Phone Number:")
-        phone_number.place(x=50, y=80)
+        self.phone_number = tk.Label(self, text = "Phone Number:")
+        self.phone_number.place(x=50, y=80)
 
-        temperature = tk.Label(self, text = "Enter your temperature:")
-        temperature.place(x=50, y=110)
+        self.temperature = tk.Label(self, text = "Enter your temperature:")
+        self.temperature.place(x=50, y=110)
 
-        location = tk.Label(self, text = "Location of your visit:")
-        location.place(x=50, y=140)
+        self.location = tk.Label(self, text = "Location of your visit:")
+        self.location.place(x=50, y=140)
 
-        date = tk.Label(self, text = "Date of your visit(MM/DD/YY):")
-        date.place(x=50, y=170)
+        self.date = tk.Label(self, text = "Date of your visit(MM/DD/YY):")
+        self.date.place(x=50, y=170)
 
         # Create an entry field
-        name_entry = tk.Entry(self)
-        name_entry.place(x=120, y=50)
+        self.name_entry = tk.Entry(self)
+        self.name_entry.place(x=120, y=50)
 
-        number_entry = tk.Entry(self)
-        number_entry.place(x=150, y=80)
+        self.number_entry = tk.Entry(self)
+        self.number_entry.place(x=150, y=80)
 
-        temp_entry = tk.Entry(self)
-        temp_entry.place(x=190, y=110)
+        self.temp_entry = tk.Entry(self)
+        self.temp_entry.place(x=190, y=110)
 
-        location_entry = tk.Entry(self)
-        location_entry.place(x=180, y=140)
+        self.location_entry = tk.Entry(self)
+        self.location_entry.place(x=180, y=140)
 
-        date_entry = tk.Entry(self)
-        date_entry.place(x=225, y=170)
-        # Create a button
-    
-    # Start the main event loop
-    def run(self):
-        self.mainloop()
+        self.date_entry = tk.Entry(self)
+        self.date_entry.place(x=225, y=170)

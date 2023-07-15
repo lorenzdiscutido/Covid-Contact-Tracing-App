@@ -9,16 +9,16 @@ class front_page():
         self.front.geometry("500x300")
 
         #add button for adding and searching entries
-        add_button = tk.Button(self.front, text="Add", command=self.add_entries)
+        add_button = tk.Button(self.front, text="Add", command=front_page.add_entries)
         add_button.place(x=250, y=90)
 
         search_button = tk.Button(self.front, text="Search")
         search_button.place(x=250, y=130)
 
     #create the function for the add button
-    def add_entries(self):
+    def add_entries():
         info = add_info()
-        info.place(x=0, y=0)
+        info.place(x=0, y=0, relwidth=1, relheight=1)
 
     def run(self):
         #Start the main loop
