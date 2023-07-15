@@ -1,7 +1,7 @@
 import tkinter as tk
 
 class add_info():
-    def __init__(self):
+    def __init__(self, master=None):
         # Create a label
         name = tk.Label(self, text = "Full Name:")
         name.place(x=50, y=50)
