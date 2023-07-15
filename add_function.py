@@ -1,7 +1,8 @@
 import tkinter as tk
 
-class add_info():
+class add_info(tk.Frame):
     def __init__(self, master=None):
+        tk.Frame.__init__(self, master)
         # Create a label
         name = tk.Label(self, text = "Full Name:")
         name.place(x=50, y=50)
@@ -34,5 +35,7 @@ class add_info():
         date_entry = tk.Entry(self)
         date_entry.place(x=225, y=170)
         # Create a button
-        # Start the main event loop
+    
+    # Start the main event loop
+    def run(self):
         self.mainloop()
