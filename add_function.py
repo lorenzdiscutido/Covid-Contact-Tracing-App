@@ -1,6 +1,6 @@
 import tkinter as tk
 
-class add_function():
+class add_info():
     def __init__(self):
         # Create a label
         name = tk.Label(self, text = "Full Name:")
