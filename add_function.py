@@ -34,3 +34,6 @@ class add_info(tk.Frame):
 
         self.date_entry = tk.Entry(self)
         self.date_entry.place(x=225, y=170)
+
+        self.submit_button = tk.Button(self, text="Submit")
+        self.submit_button.place(x=225, y=200)
