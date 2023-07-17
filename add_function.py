@@ -35,5 +35,12 @@ class add_info(tk.Frame):
         self.date_entry = tk.Entry(self)
         self.date_entry.place(x=225, y=170)
 
-        self.submit_button = tk.Button(self, text="Submit")
+        self.submit_button = tk.Button(self, text="Submit", command=self.write)
         self.submit_button.place(x=225, y=200)
+    
+    def write(self):
+        name = self.name_entry.get()
+
+        with open("information", "w") as file:
+            file.write(f"Full Name: {name}\n")
+    

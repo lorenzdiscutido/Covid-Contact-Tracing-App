@@ -19,10 +19,13 @@ class front_page():
     def add_entries():
         info = add_info()
         info.place(x=0, y=0, relwidth=1, relheight=1)
+    
+    
 
     def run(self):
         #Start the main loop
         self.front.mainloop()
+        
 #Call the function
 if __name__=="__main__":
     app = front_page()
