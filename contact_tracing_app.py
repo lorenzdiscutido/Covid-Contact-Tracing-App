@@ -6,14 +6,14 @@ class front_page():
         #Make the title window and size
         self.front = tk.Tk()
         self.front.title("Covid Tracing app")
-        self.front.geometry("500x300")
+        self.front.geometry("900x500")
 
         #add button for adding and searching entries
         add_button = tk.Button(self.front, text="Add", command=front_page.add_entries)
-        add_button.place(x=250, y=90)
+        add_button.place(x=425, y=170)
 
         search_button = tk.Button(self.front, text="Search")
-        search_button.place(x=250, y=130)
+        search_button.place(x=425, y=200)
 
     #create the function for the add button
     def add_entries():
