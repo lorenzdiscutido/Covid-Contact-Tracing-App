@@ -21,7 +21,6 @@ class front_page():
         info.place(x=0, y=0, relwidth=1, relheight=1)
     
     
-
     def run(self):
         #Start the main loop
         self.front.mainloop()
