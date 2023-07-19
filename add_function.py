@@ -40,7 +40,16 @@ class add_info(tk.Frame):
     
     def write(self):
         name = self.name_entry.get()
+        number = self.number_entry.get()
+        temp = self.temp_entry.get()
+        location = self.location_entry.get()
+        date = self.date_entry.get()
 
         with open("information", "w") as file:
             file.write(f"Full Name: {name}\n")
+            file.write(f"Phone Number:{number}\n")
+            file.write(f"Temperature: {temp}\n")
+            file.write(f"Location of visit: {location}\n")
+            file.write(f"Date of visit: {date}/n")
+
     
