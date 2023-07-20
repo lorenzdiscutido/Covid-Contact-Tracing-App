@@ -10,6 +10,9 @@ class add_info(tk.Frame):
         self.header2=tk.Label(self, text="Contact Person's Details", font=("Arial", 10))
         self.header2.place(x=350, y=20)
 
+        self.header3=tk.Label(self, text="Additional informations required", font=("Arial", 15))
+        self.header3.place(x=20, y=150)
+
         #Label for name
         self.name = tk.Label(self, text = "Full Name")
         self.name.place(x=20, y=50)
@@ -65,9 +68,13 @@ class add_info(tk.Frame):
         self.date_entry = tk.Entry(self, width=39)
         self.date_entry.place(x=425, y=110)
 
+        #Ask the respondent for vaccination status
+        self.vaccination_status=tk.Label(self, text="What is your vaccination status?")
+        self.vaccination_status.place(x=380, y=210)
+
         #Button for submit
         self.submit_button = tk.Button(self, text="Submit", command=self.write)
-        self.submit_button.place(x=225, y=200)
+        self.submit_button.place(x=420, y=450)
     
     def write(self):
         name = self.name_entry.get()
