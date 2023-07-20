@@ -70,8 +70,23 @@ class add_info(tk.Frame):
 
         #Ask the respondent for vaccination status
         self.vaccination_status=tk.Label(self, text="What is your vaccination status?")
-        self.vaccination_status.place(x=380, y=210)
-
+        self.vaccination_status.place(x=20, y=180)
+        #choice1
+        self.vacinnation_choice1_radio=tk.Radiobutton(self, text="Not yet")
+        self.vacinnation_choice1_radio.place(x=20, y=200)
+        #choice2
+        self.vacinnation_choice2_radio=tk.Radiobutton(self, text="1st Dose")
+        self.vacinnation_choice2_radio.place(x=20, y=220)
+        #choice3
+        self.vacinnation_choice3_radio=tk.Radiobutton(self, text="2nd Dose")
+        self.vacinnation_choice3_radio.place(x=20, y=240)
+        #choice4
+        self.vacinnation_choice4_radio=tk.Radiobutton(self, text="1st Booster Shot")
+        self.vacinnation_choice4_radio.place(x=20, y=260)
+        #choice5
+        self.vacinnation_choice5_radio=tk.Radiobutton(self, text="2nd Booster Shot")
+        self.vacinnation_choice5_radio.place(x=20, y=280)
+        
         #Button for submit
         self.submit_button = tk.Button(self, text="Submit", command=self.write)
         self.submit_button.place(x=420, y=450)
