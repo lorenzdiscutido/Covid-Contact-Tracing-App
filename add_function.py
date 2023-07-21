@@ -146,5 +146,9 @@ class add_info(tk.Frame):
             file.write(f"Contact Person Email: {contact_person_email}\n")
             file.write(f"Relationship: {Relation}\n")
             file.write(f"Contact Person's Number: {contact_person_number}\n")
+        
+    def closing(self):
+        close=add_info.write()
+        close.place(x=0, y=0, relwidth=1, relheight=1)
 
     
