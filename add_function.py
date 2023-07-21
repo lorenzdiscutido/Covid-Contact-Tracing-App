@@ -1,6 +1,5 @@
 import tkinter as tk
-import csv
-from tkinter import messagebox
+from closing import Closing
 class add_info(tk.Frame):
     def __init__(self, master=None):
         tk.Frame.__init__(self, master)
@@ -136,6 +135,11 @@ class add_info(tk.Frame):
         contact_person_number = self.person_number_entry.get()
         date = self.date_entry.get()
         Relation = self.relationship_entry.get()
+        vaccination = self.vaccination_choice.get()
+        exposure = self.exposure_choice.get()
+        contact_symptoms = self.symptom_contact_choice.get()
+        tested = self.test.get()
+
 
         with open("information.csv", "a") as file:
             file.write(f"Full Name: {name}\n")
@@ -146,9 +150,13 @@ class add_info(tk.Frame):
             file.write(f"Contact Person Email: {contact_person_email}\n")
             file.write(f"Relationship: {Relation}\n")
             file.write(f"Contact Person's Number: {contact_person_number}\n")
+            file.write(f"Vaccination Status: {vaccination}\n")
+            file.write(f"Have you had exposure to a probable or confirmed case in the last 14 days?: {exposure}\n")
+            file.write(f"Have you had in contact with somebody with covid symptoms in the past 7 days?: {contact_symptoms}\n")
+            file.write(f"Have you been tested for Covid-19 in the last 14 days?: {tested}\n")
+
+        last_window=Closing(self.master)
+        last_window.pack(fill="both", expand=True)
         
-    def closing(self):
-        close=add_info.write()
-        close.place(x=0, y=0, relwidth=1, relheight=1)
 
     

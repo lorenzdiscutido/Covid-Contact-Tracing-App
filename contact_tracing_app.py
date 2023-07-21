@@ -1,4 +1,5 @@
 import tkinter as tk
+import csv
 from add_function import add_info
 
 class front_page():
@@ -13,7 +14,7 @@ class front_page():
         add_button.place(x=425, y=170)
 
         search_button = tk.Button(self.front, text="Search")
-        search_button.place(x=425, y=200)
+        search_button.place(x=421, y=200)
 
     #create the function for the add button
     def add_entries():
