@@ -1,5 +1,4 @@
 import tkinter as tk
-
 #create a class for closing message
 class Closing(tk.Frame):
     def __init__(self, master=None):
@@ -16,3 +15,4 @@ class Closing(tk.Frame):
     
     def exit(self):
         self.master.destroy()
+
