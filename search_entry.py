@@ -13,4 +13,10 @@ class search_info(tk.Frame):
         self.name_label=tk.Label(self, text="Please enter the name you want to search", font=("Arial", "10"))
         self.name_label.place(x=335, y=200)
         #create an entry for searching infos
+        self.name_entry=tk.Entry(self)
+        self.name_entry.place(x=335, y=220, width=250)
+
+        #Create a search button
+        self.search_button=tk.Button(self, text="Search")
+        self.search_button.place(x=440, y=250)
         
