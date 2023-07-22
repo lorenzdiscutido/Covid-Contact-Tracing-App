@@ -142,11 +142,14 @@ class add_info(tk.Frame):
         tested = self.test.get()
 
 
-        with open("information.csv", "a", new="") as file:
-            with open("information.csv", "a", newline="") as file:
-                write = csv.writer(file)
-                write.writerow([name, number, email, contact_person, contact_person_email, contact_person_number, Relation, vaccination, exposure, contact_symptoms, tested, date])
-                last_window=Closing(self.master)
+
+        with open("information.csv", "a", newline='') as file:
+            write = csv.writer(file)
+            write.writerow([name, number, email, contact_person, 
+                            contact_person_email, contact_person_number, 
+                            Relation, vaccination, exposure, contact_symptoms, tested, date])
+            
+            last_window=Closing(self.master)
         last_window.pack(fill="both", expand=True)
         
 
