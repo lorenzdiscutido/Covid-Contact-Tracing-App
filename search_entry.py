@@ -23,7 +23,13 @@ class search_info(tk.Frame):
         #create a canvas for the result
         self.result_canvas=tk.Canvas(self, width=390, height=320, highlightbackground="black")
         self.result_canvas.place(x=450, y=130)
+
+        #Create a button to exit the app
+        exit_button = tk.Button(self, text="Exit", command=self.exit, highlightbackground="black", width=15)
+        exit_button.place(x=610, y=400)
     
+    def exit(self):
+        self.master.destroy()
     def search(self):
         self.result_canvas.delete("all")
 
