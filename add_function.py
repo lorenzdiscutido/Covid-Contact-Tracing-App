@@ -1,5 +1,6 @@
 import tkinter as tk
 from closing import Closing
+import csv
 class add_info(tk.Frame):
     def __init__(self, master=None):
         tk.Frame.__init__(self, master)
@@ -75,19 +76,19 @@ class add_info(tk.Frame):
         self.vaccination_status=tk.Label(self, text="What is your vaccination status?")
         self.vaccination_status.place(x=20, y=180)
         #choice1
-        self.vacinnation_choice1_radio=tk.Radiobutton(self, text="Not yet", variable=self.vaccination_choice, value="0")
+        self.vacinnation_choice1_radio=tk.Radiobutton(self, text="Not yet", variable=self.vaccination_choice, value="Not yet")
         self.vacinnation_choice1_radio.place(x=20, y=200)
         #choice2
-        self.vacinnation_choice2_radio=tk.Radiobutton(self, text="1st Dose", variable=self.vaccination_choice, value="1")
+        self.vacinnation_choice2_radio=tk.Radiobutton(self, text="1st Dose", variable=self.vaccination_choice, value="1st Dose")
         self.vacinnation_choice2_radio.place(x=20, y=220)
         #choice3
-        self.vacinnation_choice3_radio=tk.Radiobutton(self, text="2nd Dose", variable=self.vaccination_choice, value="2")
+        self.vacinnation_choice3_radio=tk.Radiobutton(self, text="2nd Dose", variable=self.vaccination_choice, value="2nd Dose")
         self.vacinnation_choice3_radio.place(x=20, y=240)
         #choice4
-        self.vacinnation_choice4_radio=tk.Radiobutton(self, text="1st Booster Shot", variable=self.vaccination_choice, value="3")
+        self.vacinnation_choice4_radio=tk.Radiobutton(self, text="1st Booster Shot", variable=self.vaccination_choice, value="1st Booster Shot")
         self.vacinnation_choice4_radio.place(x=20, y=260)
         #choice5
-        self.vacinnation_choice5_radio=tk.Radiobutton(self, text="2nd Booster Shot", variable=self.vaccination_choice, value="4")
+        self.vacinnation_choice5_radio=tk.Radiobutton(self, text="2nd Booster Shot", variable=self.vaccination_choice, value="2nd Booster Shot")
         self.vacinnation_choice5_radio.place(x=20, y=280)
         
         #create a variable for exposure
@@ -141,21 +142,11 @@ class add_info(tk.Frame):
         tested = self.test.get()
 
 
-        with open("information.csv", "a") as file:
-            file.write(f"{name}\n")
-            file.write(f"{number}\n")
-            file.write(f"{email}\n")
-            file.write(f"{contact_person}\n")
-            file.write(f"{date}\n")
-            file.write(f"{contact_person_email}\n")
-            file.write(f"{Relation}\n")
-            file.write(f"{contact_person_number}\n")
-            file.write(f"{vaccination}\n")
-            file.write(f"{exposure}\n")
-            file.write(f"{contact_symptoms}\n")
-            file.write(f"{tested}\n")
-
-        last_window=Closing(self.master)
+        with open("information.csv", "a", new="") as file:
+            with open("information.csv", "a", newline="") as file:
+                write = csv.writer(file)
+                write.writerow([name, number, email, contact_person, contact_person_email, contact_person_number, Relation, vaccination, exposure, contact_symptoms, tested, date])
+                last_window=Closing(self.master)
         last_window.pack(fill="both", expand=True)
         
 

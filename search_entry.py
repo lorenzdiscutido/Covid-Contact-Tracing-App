@@ -25,16 +25,17 @@ class search_info(tk.Frame):
         self.result_canvas.place(x=450, y=130)
     
     def search(self):
-        self.result_canvas.delete()
+        self.result_canvas.delete("all")
 
         name=self.name_entry.get()
         found = False
         with open("information.csv", "r") as file:
             read=csv.reader(file)
             for row in read:
-                if len(row) > 0 and row[0] == name:
+                if len(row) >= 12 and row[0] == name:
                     found = True
-                    result = f"{row[0]}"
+                    result = f"Name:{row[0]}\n Phone number: {row[1]}\nEmail: {row[2]}\nContact person: {row[3]}\nEmail: {row[4]}\nRelationship: {row[5]}\nNumber: {row[6]}\n\n"
+                    result += f"Vaccination status: {row[7]}\nExposure to Covid: {row[8]}\nSymptoms of Covid: {row[9]}\nHave been tested for Covid in the last 14 days: {row[10]}\nDate of Visit: {row[11]}"
                     self.result_canvas.create_text(10, 10, anchor="nw", text=result, font=("Arial", 10), fill="black")
                     break
         
